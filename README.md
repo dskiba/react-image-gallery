@@ -1,9 +1,13 @@
 # test for cosysoft
 
-
-# test for cosysoft
-
-
+# check:
+[x] add image via cloduinary;
+[x] add date upload;
+[ ] add image comment;
+[ ] add edit image comment;
+[x] add image gallery via (react-photo-gallery);
+[x] add image views via Lightbox(react-images);
+[ ] add sortbale images (react-sorable-hoc);
 
 # How to run
 ```bash
