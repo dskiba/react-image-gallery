@@ -1,6 +1,7 @@
 # test for cosysoft
 
 # check:
+```bash
 [x] add image via cloduinary;
 [x] add date upload;
 [ ] add image comment;
