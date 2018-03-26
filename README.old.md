@@ -1,2 +1,0 @@
-# react-image-gallery
-test
