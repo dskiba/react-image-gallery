@@ -6,7 +6,6 @@ export default function getImages(name, tag) {
         // image: item.public_id,
         // date: item.created_at,
         // format: item.format,
-
         src: `https://res.cloudinary.com/${name}/image/upload/${
           item.public_id
         }.${item.format}`,

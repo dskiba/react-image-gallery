@@ -10,7 +10,6 @@ import {
   arrayMove
 } from "react-sortable-hoc";
 import { Header, AddImage, ButtonWrapper, GalleryWrapper } from "./styles";
-import Photo from "./Photo";
 
 const cloudinary_name = "dskiba";
 const images_tag = "cosysoft";
@@ -24,7 +23,6 @@ const upload_preset = "yzsc9mri";
 class ImageGallery extends Component {
   constructor(props) {
     super(props);
-    this.onSortEnd = this.onSortEnd.bind(this);
     this.state = {
       images: [],
       lightboxIsOpen: false,
@@ -36,7 +34,7 @@ class ImageGallery extends Component {
     this.gotoPrevious = this.gotoPrevious.bind(this);
   }
 
-  async componentDidMount() {
+  async componentWillMount() {
     const images = await getImages(cloudinary_name, images_tag);
     this.setState({
       images
@@ -55,7 +53,7 @@ class ImageGallery extends Component {
       },
       function(error, result) {
         console.log(result);
-        // _this.setState({ images: _this.state.images.concat(result) });
+        //_this.setState({ images: _this.state.images.concat(result) });
       }
     );
   }
@@ -82,23 +80,18 @@ class ImageGallery extends Component {
       currentImage: this.state.currentImage + 1
     });
   }
-  onSortEnd({ oldIndex, newIndex }) {
-    this.setState({
-      images: arrayMove(this.state.images, oldIndex, newIndex)
-    });
-  }
+  // onSortEnd({ oldIndex, newIndex }) {
+  //   this.setState({
+  //     images: arrayMove(this.state.images, oldIndex, newIndex)
+  //   });
+  // }
 
   render() {
     return (
       <div>
         <Header>Image Gallery</Header>
         <ButtonWrapper>
-          <AddImage
-            onClick={this.uploadWidget.bind(this)}
-            className="upload-button"
-          >
-            Add Image
-          </AddImage>
+          <AddImage onClick={this.uploadWidget.bind(this)}>Add Image</AddImage>
         </ButtonWrapper>
         <GalleryWrapper>
           <Gallery photos={this.state.images} onClick={this.openLightbox} />
