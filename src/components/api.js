@@ -9,7 +9,10 @@ export default function getImages(name, tag) {
 
         src: `https://res.cloudinary.com/${name}/image/upload/${
           item.public_id
-        }.${item.format}`
+        }.${item.format}`,
+        width: item.width,
+        height: item.height,
+        caption: item.created_at
       }))
     );
 }
