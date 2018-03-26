@@ -5,6 +5,7 @@
 ```bash
 [x] add image via cloduinary;
 [x] add date upload;
+[ ] add liveupdate new images;
 [ ] add image comment;
 [ ] add edit image comment;
 [x] add image gallery via (react-photo-gallery);
